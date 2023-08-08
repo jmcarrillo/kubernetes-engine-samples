@@ -5,7 +5,7 @@ WORKDIR /go/src/hello-app
 RUN go get -d -v ./...
 RUN go install hello-app
 
-FROM alpine:latest
+FROM alpine:3.18.3
 COPY --from=0 /go/src/hello-app .
 COPY --from=0 /go/bin/hello-app .
 ENV PORT 8080
