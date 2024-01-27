@@ -2,6 +2,6 @@ FROM golang:1.8-alpine
 ADD . /go/src/hello-app
 RUN go install hello-app
 
-FROM alpine:latest
+FROM alpine:3.19.1
 COPY --from=0 /go/bin/hello-app .
 CMD ["./hello-app"]
